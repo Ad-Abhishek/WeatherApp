@@ -11,7 +11,6 @@ app.get("/", function(req, res) {
 });
 
 app.post("/", function(req, res) {
-  // console.log(req.body.cityName);
   const query = req.body.cityName;
   const unit = "metric";
   const apiKey = "fc3571724949f5ec24bb9503b1e086ab";
@@ -19,8 +18,6 @@ app.post("/", function(req, res) {
 
 
   https.get(url, function(response) {
-    // console.log(response.statusCode);
-
     response.on("data", function(data) {
       const weatherData = JSON.parse(data);
       const temp = weatherData.main.temp;
